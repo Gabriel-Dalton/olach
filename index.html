@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Notes App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+  <h1 class="text-3xl font-bold mb-6 text-blue-600">Secure Notes App</h1>
+  
+  <div id="note-form" class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
+    <input type="text" id="note-title" placeholder="Note Title" class="w-full p-2 mb-4 border border-gray-300 rounded">
+    <textarea id="note-content" placeholder="Note Content" class="w-full p-2 mb-4 border border-gray-300 rounded"></textarea>
+    <input type="password" id="note-password" placeholder="Enter password to encrypt" class="w-full p-2 mb-4 border border-gray-300 rounded">
+    <button onclick="saveNote()" class="bg-blue-500 text-white p-2 rounded w-full">Save Note</button>
+  </div>
+  
+  <h2 class="text-2xl font-semibold mt-8 mb-4">Your Notes</h2>
+  
+  <div id="notes-list" class="w-full max-w-lg">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+  <script>
+    const saveNote = () => {
+      const title = document.getElementById('note-title').value;
+      const content = document.getElementById('note-content').value;
+      const password = document.getElementById('note-password').value;
+
+      if (!title || !content || !password) {
+        alert('Please fill in all fields!');
+        return;
+      }
+
+      const encryptedContent = CryptoJS.AES.encrypt(content, password).toString();
+
+      localStorage.setItem(title, encryptedContent);
+
+      displayNotes();
+
+      document.getElementById('note-title').value = '';
+      document.getElementById('note-content').value = '';
+      document.getElementById('note-password').value = '';
+    };
+
+    const displayNotes = () => {
+      const notesList = document.getElementById('notes-list');
+      notesList.innerHTML = '';
+
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const noteItem = `<div class="bg-white p-4 mb-4 shadow rounded">
+          <h3 class="text-lg font-bold">${key}</h3>
+          <button onclick="decryptNote('${key}')" class="bg-green-500 text-white mt-2 p-2 rounded">View Note</button>
+          <button onclick="deleteNote('${key}')" class="bg-red-500 text-white mt-2 p-2 rounded ml-4">Delete</button>
+        </div>`;
+        notesList.innerHTML += noteItem;
+      }
+    };
+
+    const decryptNote = (key) => {
+      const password = prompt('Enter password to decrypt the note:');
+      const encryptedContent = localStorage.getItem(key);
+
+      try {
+        const bytes = CryptoJS.AES.decrypt(encryptedContent, password);
+        const decryptedContent = bytes.toString(CryptoJS.enc.Utf8);
+
+        if (decryptedContent) {
+          alert(`Note content: ${decryptedContent}`);
+        } else {
+          throw new Error();
+        }
+      } catch (e) {
+        alert('Wrong password or corrupted note.');
+      }
+    };
+
+    const deleteNote = (key) => {
+      if (confirm(`Are you sure you want to delete the note "${key}"?`)) {
+        localStorage.removeItem(key);
+        displayNotes();
+      }
+    };
+
+    displayNotes();
+  </script>
+</body>
+</html>
