@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olach - Secure Notes App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <nav class="bg-white shadow-md p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">Olach</h1>
+      <div>
+        <a href="#features" class="text-lg text-gray-600 hover:text-blue-600 mx-4">Features</a>
+        <a href="#comparison" class="text-lg text-gray-600 hover:text-blue-600 mx-4">Why Olach</a>
+        <a href="#get-started" class="text-lg text-gray-600 hover:text-blue-600 mx-4">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bg-blue-600 text-white py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Olach: Keep Your Notes Securely Hidden</h2>
+      <p class="text-xl mb-8">Olach ensures your private notes are encrypted and hidden, giving you total control over your data.</p>
+      <a href="#get-started" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Start Using Olach Now</a>
+    </div>
+  </section>
+
+  <section class="container mx-auto py-12" id="features">
+    <h2 class="text-3xl font-bold text-center mb-6">The Problem with Traditional Note-Taking Apps</h2>
+    <div class="flex flex-wrap justify-around">
+      <div class="bg-white p-6 rounded-lg shadow-md max-w-sm mb-4">
+        <h3 class="text-2xl font-semibold mb-2">No True Privacy</h3>
+        <p>Google Docs and Dropbox Paper store your data on their servers, with encryption keys that they control. This means they can access your notes at any time.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md max-w-sm mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Third-Party Data Sharing</h3>
+        <p>These platforms share your data with third-party services for analytics and advertising, compromising your privacy.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md max-w-sm mb-4">
+        <h3 class="text-2xl font-semibold mb-2">Vulnerability to Data Breaches</h3>
+        <p>Large companies like Dropbox have been targets of data breaches, exposing millions of user accounts and data to hackers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16" id="comparison">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-6">Why Choose Olach?</h2>
+      <div class="flex flex-wrap justify-around">
+        <div class="bg-white p-6 rounded-lg shadow-md max-w-sm mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Client-Side Encryption</h3>
+          <p>Your notes are encrypted directly in your browser. Only you have the decryption key, meaning no one else can access your notes.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md max-w-sm mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Secure Local Storage</h3>
+          <p>Your notes are stored securely on your device, with no reliance on external servers or cloud storage.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md max-w-sm mb-4">
+          <h3 class="text-2xl font-semibold mb-2">No Data Sharing</h3>
+          <p>We don’t share your data with any third parties. Your notes are encrypted and hidden—only you can unlock them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mx-auto py-12">
+    <h2 class="text-3xl font-bold text-center mb-6">Comparison: Olach vs. Other Platforms</h2>
+    <div class="overflow-x-auto">
+      <table class="table-auto w-full bg-white rounded-lg shadow-md text-left">
+        <thead>
+          <tr class="bg-blue-600 text-white">
+            <th class="px-4 py-2">Feature</th>
+            <th class="px-4 py-2">Olach</th>
+            <th class="px-4 py-2">Google Docs</th>
+            <th class="px-4 py-2">Dropbox Paper</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t">
+            <td class="px-4 py-2">Client-Side Encryption</td>
+            <td class="px-4 py-2 text-green-600 font-bold">Yes</td>
+            <td class="px-4 py-2 text-red-600">No</td>
+            <td class="px-4 py-2 text-red-600">No</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-4 py-2">Offline Access</td>
+            <td class="px-4 py-2 text-green-600 font-bold">Yes</td>
+            <td class="px-4 py-2">Limited</td>
+            <td class="px-4 py-2">Limited</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-4 py-2">Third-Party Data Sharing</td>
+            <td class="px-4 py-2 text-green-600 font-bold">No</td>
+            <td class="px-4 py-2 text-red-600">Yes</td>
+            <td class="px-4 py-2 text-red-600">Yes</td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-4 py-2">Data Breach Protection</td>
+            <td class="px-4 py-2 text-green-600 font-bold">Yes</td>
+            <td class="px-4 py-2">No</td>
+            <td class="px-4 py-2">No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="bg-blue-600 text-white py-16 text-center" id="get-started">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Ready to Secure Your Notes?</h2>
+      <p class="text-lg mb-8">Get started today and enjoy 100% control over your private data with Olach.</p>
+      <a href="#" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Try Olach Now</a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Olach. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
