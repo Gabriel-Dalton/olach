@@ -15,3 +15,6 @@
 
 ## Contributions:
 We welcome contributions! Check out the issues section for open tasks or suggest new features.
+
+## Name Origin:
+The name **Olach** comes from the Irish word **"i bhfolach,"** meaning "hidden." It reflects the app’s core purpose of keeping your notes securely hidden and protected through encryption, ensuring your privacy is always maintained.
