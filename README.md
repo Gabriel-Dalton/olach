@@ -29,4 +29,4 @@ The name **Olach** is derived from the Irish word **"i bhfolach,"** meaning "hid
 We welcome contributions! Feel free to check the issues section for open tasks or suggest new features.
 
 ## Future Development:
-I aim to continue working on adding **AES encryption** using CryptoJS to ensure advanced security for your notes. Other planned features include **auto-locking** after inactivity, **password protection** for added privacy, and offering the choice between **local storage** or using external options like **cookies**, **Supabase**, or **Firebase** if users prefer to store their data on a server. These enhancements will provide more flexibility and stronger security for all users.
+I aim to continue working on adding **AES encryption** using CryptoJS to ensure advanced security for your notes. Other planned features include **auto-locking** after inactivity, **password protection** for added privacy, and offering the choice between **local storage** or using external options like **cookies**, **Supabase**, or **Firebase** if users prefer to store their data on a server.
