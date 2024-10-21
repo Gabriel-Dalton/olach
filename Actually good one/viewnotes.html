@@ -7,114 +7,122 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
     <link rel="stylesheet" href="https://file-hosting.dashnexpages.net/web-ready/css/tailwind/tailwind.min.css">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer=""></script>
-    <section class="py-3">
-        <div class="container px-4 mx-auto">
-          <div class="pt-6 pb-8 bg-gray-500 rounded-xl">
-            <div class="px-6">
-              <h4 class="text-lg text-gray-100 font-semibold mb-6">Notes</h4>
-              <div class="w-full mt-6 pb-6 overflow-x-auto">
-                <table class="w-full min-w-max">
-                  <thead>
-                    <tr class="text-left">
-                      <th class="p-0">
-                        <div class="py-3 px-6 rounded-l-xl bg-gray-600">
-                          <span class="text-xs text-gray-300 font-semibold">NAME</span>
-                        </div>
-                      </th>
-                      <th class="p-0">
-                        <div class="py-3 px-6 bg-gray-600">
-                          <span class="text-xs text-gray-300 font-semibold">NOTES</span>
-                        </div>
-                      </th>
-                      <th class="p-0">
-                        <div class="py-3 px-6 rounded-r-xl bg-gray-600">
-                          <span class="text-xs text-gray-300 font-semibold">ACTIONS</span>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody id="notes-table-body">
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <script>
-      function renderTable() {
-        const tableBody = document.getElementById('notes-table-body');
-        const notes = JSON.parse(localStorage.getItem('notes')) || [];
-        tableBody.innerHTML = '';  
-      
-        if (notes.length === 0) {
-          const emptyRow = `
-            <tr>
-              <td colspan="3" class="text-center text-gray-100 py-4">No notes found</td>
-            </tr>
-          `;
-          tableBody.insertAdjacentHTML('beforeend', emptyRow);
-        } else {
-          notes.forEach((note, index) => {
-            const row = `
-              <tr>
-                <td class="p-0">
-                  <div class="flex items-center h-16 px-6">
-                    <span class="text-sm text-gray-100 font-medium">${note.title}</span>
+<!-- Notes List Page -->
+<section class="py-3" data-ve-id="0">
+  <div class="container px-4 mx-auto" data-ve-id="1">
+    <div class="pt-6 pb-8 bg-gray-500 rounded-xl" data-ve-id="2">
+      <div class="px-6" data-ve-id="3">
+        <h4 class="text-lg text-gray-100 font-semibold mb-6" data-ve-id="4">Notes</h4>
+        <div class="w-full mt-6 pb-6 overflow-x-auto" data-ve-id="5">
+          <table class="w-full min-w-max" data-ve-id="6">
+            <thead data-ve-id="7">
+              <tr class="text-left" data-ve-id="8">
+                <th class="p-0" data-ve-id="9">
+                  <div class="py-3 px-6 rounded-l-xl bg-gray-600" data-ve-id="10">
+                    <span class="text-xs text-gray-300 font-semibold" data-ve-id="11">NAME</span>
                   </div>
-                </td>
-                <td class="p-0">
-                  <div class="flex items-center h-16 px-6">
-                    <input type="text" class="text-sm font-medium text-gray-100 bg-gray-600 w-full rounded-lg" value="${note.content}" onchange="updateNoteContent(${index}, this.value)">
+                </th>
+                <th class="p-0" data-ve-id="12">
+                  <div class="py-3 px-6 bg-gray-600" data-ve-id="13">
+                    <span class="text-xs text-gray-300 font-semibold" data-ve-id="14">NOTES</span>
                   </div>
-                </td>
-                <td class="p-0">
-                  <div class="flex items-center h-16 px-6">
-                    <button onclick="viewDetails(${index})" class="text-blue-500 hover:text-blue-700 font-medium">View</button>
-                    <button onclick="deleteNote(${index})" class="ml-4 text-red-500 hover:text-red-700 font-medium">Delete</button>
+                </th>
+                <th class="p-0" data-ve-id="15">
+                  <div class="py-3 px-6 rounded-r-xl bg-gray-600" data-ve-id="16">
+                    <span class="text-xs text-gray-300 font-semibold" data-ve-id="17">ACTIONS</span>
                   </div>
-                </td>
+                </th>
               </tr>
-            `;
-            tableBody.insertAdjacentHTML('beforeend', row);
-          });
-        }
-      }
-      
-      function updateNoteContent(index, newContent) {
-        const notes = JSON.parse(localStorage.getItem('notes')) || [];
-        notes[index].content = newContent;
-        localStorage.setItem('notes', JSON.stringify(notes));
-        renderTable();  
-      }
-      
-      function deleteNote(index) {
-        const notes = JSON.parse(localStorage.getItem('notes')) || [];
-        notes.splice(index, 1);  
-        localStorage.setItem('notes', JSON.stringify(notes));
-        renderTable();  
-      }
-      
-      function viewDetails(index) {
-        const notes = JSON.parse(localStorage.getItem('notes')) || [];
-        const note = notes[index];
-      
-        setCookie('editNoteTitle', note.title, 1);
-        setCookie('editNoteContent', note.content, 1);
-      
+            </thead>
+            <tbody id="notes-table-body" data-ve-id="18">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script data-ve-id="19">
+  // Render the notes table from localStorage
+function renderTable() {
+  const tableBody = document.getElementById('notes-table-body');
+  
+  if (!tableBody) {
+    console.error("Table body not found. Ensure the element with ID 'notes-table-body' exists.");
+    return; // Exit if the element is not found
+  }
+
+  const notes = JSON.parse(localStorage.getItem('notes')) || [];
+  tableBody.innerHTML = '';  // Clear the table first
+
+  if (notes.length === 0) {
+    const emptyRow = `
+      <tr>
+        <td colspan="3" class="text-center text-gray-100 py-4">No notes found</td>
+      </tr>
+    `;
+    tableBody.insertAdjacentHTML('beforeend', emptyRow);
+  } else {
+    notes.forEach((note, index) => {
+      const row = `
+        <tr>
+          <td class="p-0">
+            <div class="flex items-center h-16 px-6">
+              <span class="text-sm text-gray-100 font-medium">${note.title}</span>
+            </div>
+          </td>
+          <td class="p-0">
+            <div class="flex items-center h-16 px-6">
+              <input type="text" class="text-sm font-medium text-gray-100 bg-gray-600 w-full rounded-lg" value="${note.content}" onchange="updateNoteContent(${index}, this.value)">
+            </div>
+          </td>
+          <td class="p-0">
+            <div class="flex items-center h-16 px-6">
+              <button onclick="viewDetails(${index})" class="text-blue-500 hover:text-blue-700 font-medium">View</button>
+              <button onclick="deleteNote(${index})" class="ml-4 text-red-500 hover:text-red-700 font-medium">Delete</button>
+            </div>
+          </td>
+        </tr>
+      `;
+      tableBody.insertAdjacentHTML('beforeend', row);
+    });
+  }
+}
+
+// Function to update note content in localStorage
+function updateNoteContent(index, newContent) {
+  const notes = JSON.parse(localStorage.getItem('notes')) || [];
+  notes[index].content = newContent;
+  localStorage.setItem('notes', JSON.stringify(notes));
+  renderTable();  // Re-render the table
+}
+
+// Function to delete a note
+function deleteNote(index) {
+  const notes = JSON.parse(localStorage.getItem('notes')) || [];
+  notes.splice(index, 1);  // Remove the note by index
+  localStorage.setItem('notes', JSON.stringify(notes));
+  renderTable();  // Re-render the table after deletion
+}
+
+function viewDetails(index) {
+    const notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+    if (notes[index]) {
+        localStorage.setItem('selectedNoteIndex', index);
+
         window.location.href = '/dashboard'; 
-      }
-      
-      document.addEventListener('DOMContentLoaded', function() {
-        renderTable();
-      });
-      
-      function setCookie(name, value, days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + date.toUTCString();
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
-      }
-      </script>
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderTable();
+});
+
+</script>
+  
+  
+  
+  
+
       
