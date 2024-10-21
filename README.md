@@ -16,7 +16,7 @@
 ## How to Use:
 1. Clone the repository: `git clone https://github.com/Gabriel-Dalton/olach`
 2. Open `index.html` in your browser.
-3. Start creating and saving encrypted notes locally!
+3. Start creating and saving notes locally!
 
 ## Contributions:
 We welcome contributions! Check out the issues section for open tasks or suggest new features.
