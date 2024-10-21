@@ -22,8 +22,11 @@
 2. Open `index.html` in your browser.
 3. Start creating and managing your notes locally!
 
+## Name Origin:
+The name **Olach** is derived from the Irish word **"i bhfolach,"** meaning "hidden." This name reflects the app’s core mission of keeping your notes private and secure, ensuring your data is only accessible by you.
+
 ## Contributions:
 We welcome contributions! Feel free to check the issues section for open tasks or suggest new features.
 
-## Name Origin:
-The name **Olach** is derived from the Irish word **"i bhfolach,"** meaning "hidden." This name reflects the app’s core mission of keeping your notes private and secure, ensuring your data is only accessible by you.
+## Future Development:
+I aim to continue working on adding **AES encryption** using CryptoJS to ensure advanced security for your notes. Other planned features include **auto-locking** after inactivity, **password protection** for added privacy, and offering the choice between **local storage** or using external options like **cookies**, **Supabase**, or **Firebase** if users prefer to store their data on a server. These enhancements will provide more flexibility and stronger security for all users.
