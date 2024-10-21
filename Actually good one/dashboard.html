@@ -155,8 +155,6 @@
             </nav>
           </div>
           <div class="relative z-50 mx-auto lg:ml-80">
-      
-      <!-- Tailwind CSS for styles -->
       <script src="https://cdn.tailwindcss.com"></script>
       <style>
           body {
@@ -193,16 +191,11 @@
   <div class="flex justify-center items-start min-h-screen pt-12">
     <div class="w-full max-w-4xl px-6">
       <form id="noteForm">
-        <!-- Note Title -->
         <input type="text" id="note-title" class="note-title text-5xl font-bold mb-6" placeholder="Give me a name">
-  
-        <!-- Note Content -->
         <textarea id="note-content" class="note-content text-xl" placeholder="Now write something brilliant..."></textarea>
       </form>
     </div>
   </div>
-  
-  <!-- Auto-Save Status Display -->
   <div id="auto-save-status" class="fixed bottom-4 right-4 py-2 px-4 bg-gray-600 text-gray-300 text-sm rounded-lg shadow-lg">
     Auto-save just now
   </div>
@@ -212,9 +205,8 @@
       let lastAutoSave = Date.now();
       let autoSaveTimeout;
   
-      // Save note to localStorage
       function saveNoteToLocalStorage(title, content) {
-          const notes = JSON.parse(localStorage.getItem('notes')) || [];
+          let notes = JSON.parse(localStorage.getItem('notes')) || [];
           const existingNoteIndex = notes.findIndex(note => note.title === title);
   
           if (existingNoteIndex > -1) {
@@ -226,7 +218,6 @@
           localStorage.setItem('notes', JSON.stringify(notes));
       }
   
-      // Auto-save function after user stops typing
       function autoSaveNote() {
           const title = document.getElementById('note-title').value.trim();
           const content = document.getElementById('note-content').value.trim();
@@ -237,7 +228,6 @@
           }
       }
   
-      // Auto-save status function
       function updateAutoSaveStatus() {
           lastAutoSave = Date.now();
           document.getElementById('auto-save-status').textContent = 'Auto-saved just now';
@@ -252,13 +242,11 @@
           }
       }
   
-      // Auto-save after typing stops for 1 second
       function delayedAutoSave() {
           clearTimeout(autoSaveTimeout);
-          autoSaveTimeout = setTimeout(autoSaveNote, 1000);  // Wait 1 second
+          autoSaveTimeout = setTimeout(autoSaveNote, 1000); 
       }
   
-      // Load from localStorage on page load
       window.onload = function () {
           const notes = JSON.parse(localStorage.getItem('notes')) || [];
           if (notes.length > 0) {
@@ -272,7 +260,6 @@
       document.getElementById('note-content').addEventListener('input', delayedAutoSave);
   });
   </script>
-  
   
   <style>
     .note-title, .note-content {
@@ -305,5 +292,6 @@
     }
   </style>
   
-  
+                      
+                      
   </div></div></div>

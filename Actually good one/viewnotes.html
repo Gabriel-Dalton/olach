@@ -34,7 +34,6 @@
                     </tr>
                   </thead>
                   <tbody id="notes-table-body">
-                    <!-- Dynamically created rows will go here -->
                   </tbody>
                 </table>
               </div>
@@ -44,11 +43,10 @@
       </section>
       
       <script>
-      // Render the notes table from localStorage
       function renderTable() {
         const tableBody = document.getElementById('notes-table-body');
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
-        tableBody.innerHTML = '';  // Clear the table first
+        tableBody.innerHTML = '';  
       
         if (notes.length === 0) {
           const emptyRow = `
@@ -84,41 +82,34 @@
         }
       }
       
-      // Function to update note content in localStorage
       function updateNoteContent(index, newContent) {
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
         notes[index].content = newContent;
         localStorage.setItem('notes', JSON.stringify(notes));
-        renderTable();  // Re-render the table
+        renderTable();  
       }
       
-      // Function to delete a note
       function deleteNote(index) {
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
-        notes.splice(index, 1);  // Remove the note by index
+        notes.splice(index, 1);  
         localStorage.setItem('notes', JSON.stringify(notes));
-        renderTable();  // Re-render the table after deletion
+        renderTable();  
       }
       
-      // Function to view note details and redirect to the note page
       function viewDetails(index) {
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
         const note = notes[index];
       
-        // Set cookies for note title and content to edit later
         setCookie('editNoteTitle', note.title, 1);
         setCookie('editNoteContent', note.content, 1);
       
-        // Redirect to note editing page
-        window.location.href = 'https://app-olach.oasisofchange.org/dashboard/';
+        window.location.href = '/dashboard'; 
       }
       
-      // Call renderTable when the page loads
       document.addEventListener('DOMContentLoaded', function() {
         renderTable();
       });
       
-      // Helper function to set a cookie
       function setCookie(name, value, days) {
         const date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
