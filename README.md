@@ -1,25 +1,29 @@
-# Olach - Secure Notes App
+# Olach - Privacy-Focused Notes App
 
-**Olach** is a completely free, privacy-focused note-taking app that uses client-side encryption to keep your notes safe and secure. Your data never leaves your device, ensuring complete control over your information.
+**Olach** is a free, privacy-centric note-taking application designed to give users complete control over their data by keeping everything local. Whether you're brainstorming ideas or managing important information, Olach offers a seamless and secure experience directly from your browser.
 
 ## Key Features:
-- **Local Storage**: Your notes are stored securely on your device, ensuring quick access without reliance on external servers. This offers both privacy and convenience as your data stays within your control.
+- **Local Storage**: Your notes are stored directly on your device, offering privacy and quick access without reliance on external servers.
   
-- **Seamless Note Management**: Easily create, edit, and delete notes directly from your browser. Each note is automatically saved locally, allowing you to focus on your content without worrying about manual backups.
+- **Seamless Note Management**: Easily create, edit, and delete notes in your browser, with all changes saved locally.
 
-- **Private and Secure**: With no external servers involved, your notes remain private and secure on your device. You have complete control over your data, reducing the risk of unauthorized access.
+- **Private Access**: Manage and access your notes privately, as everything is stored only on your device with no third-party access.
 
-- **User-Friendly Interface**: Designed for simplicity, the intuitive interface allows you to manage your notes effortlessly. Whether you're jotting down ideas or managing important information, everything is just a click away.
+- **User-Friendly Interface**: A clean and simple interface to help you manage notes with ease, keeping you focused on your tasks.
 
-- **Fast and Accessible**: Notes are saved locally, ensuring rapid access even without an internet connection. This keeps your workflow smooth and uninterrupted.
+- **Offline Access**: Access your notes anytime, even without an internet connection, after downloading from GitHub.
+
+- **Open Source**: Fully open-source, allowing contributions from the community to improve features or functionality.
+
+- **No Ads, No Data Selling**: Olach is ad-free and collects zero data, ensuring your privacy is respected.
 
 ## How to Use:
 1. Clone the repository: `git clone https://github.com/Gabriel-Dalton/olach`
 2. Open `index.html` in your browser.
-3. Start creating and saving notes locally!
+3. Start creating and managing your notes locally!
 
 ## Contributions:
-We welcome contributions! Check out the issues section for open tasks or suggest new features.
+We welcome contributions! Feel free to check the issues section for open tasks or suggest new features.
 
 ## Name Origin:
-The name **Olach** comes from the Irish word **"i bhfolach,"** meaning "hidden." It reflects the app’s core purpose of keeping your notes securely hidden and protected through encryption, ensuring your privacy is always maintained.
+The name **Olach** is derived from the Irish word **"i bhfolach,"** meaning "hidden." This name reflects the app’s core mission of keeping your notes private and secure, ensuring your data is only accessible by you.
