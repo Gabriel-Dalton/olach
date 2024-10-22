@@ -30,3 +30,9 @@ We welcome contributions! Feel free to check the issues section for open tasks o
 
 ## Future Development:
 I aim to continue working on adding **AES encryption** using CryptoJS to ensure advanced security for your notes. Other planned features include **auto-locking** after inactivity, **password protection** for added privacy, and offering the choice between **local storage** or using external options like **cookies**, **Supabase**, or **Firebase** if users prefer to store their data on a server.
+
+
+![image](https://github.com/user-attachments/assets/5b72fa0a-371a-4e81-9d34-27c57fa5b237)
+
+![image](https://github.com/user-attachments/assets/aab0ed5a-0588-405d-8f09-d1dbd79b8ab3)
+
