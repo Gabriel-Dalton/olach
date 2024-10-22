@@ -48,17 +48,16 @@
     </section>
     
     <script>
-    // Render the notes table from localStorage
     function renderTable() {
       const tableBody = document.getElementById('notes-table-body');
       
       if (!tableBody) {
         console.error("Table body not found. Ensure the element with ID 'notes-table-body' exists.");
-        return; // Exit if the element is not found
+        return;
       }
     
       const notes = JSON.parse(localStorage.getItem('notes')) || [];
-      tableBody.innerHTML = '';  // Clear the table first
+      tableBody.innerHTML = '';
     
       if (notes.length === 0) {
         const emptyRow = `
@@ -94,37 +93,30 @@
       }
     }
     
-    // Function to update note content in localStorage
     function updateNoteContent(index, newContent) {
       const notes = JSON.parse(localStorage.getItem('notes')) || [];
       notes[index].content = newContent;
       localStorage.setItem('notes', JSON.stringify(notes));
-      renderTable();  // Re-render the table
+      renderTable(); 
     }
     
-    // Function to delete a note
     function deleteNote(index) {
       const notes = JSON.parse(localStorage.getItem('notes')) || [];
-      notes.splice(index, 1);  // Remove the note by index
+      notes.splice(index, 1); 
       localStorage.setItem('notes', JSON.stringify(notes));
-      renderTable();  // Re-render the table after deletion
+      renderTable(); 
     }
     
-    // Function to view note details and redirect to the dashboard page
     function viewDetails(index) {
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
     
         if (notes[index]) {
-            // Store the index of the selected note in localStorage so it can be accessed on the dashboard page
             localStorage.setItem('selectedNoteIndex', index);
     
-            // Redirect to the note editing page (dashboard)
             window.location.href = '/dashboard'; 
         }
     }
     
-    
-    // Call renderTable when the page loads
     document.addEventListener('DOMContentLoaded', function() {
       renderTable();
     });

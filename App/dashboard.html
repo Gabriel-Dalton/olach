@@ -61,7 +61,6 @@
         </div>
         <div class="relative z-50 mx-auto lg:ml-80" data-ve-id="32">
     
-    <!-- Tailwind CSS for styles -->
     <script src="https://cdn.tailwindcss.com" data-ve-id="33"></script>
     <style data-ve-id="34">
         body {
@@ -91,15 +90,13 @@
         }
 
         .note-content {
-            height: calc(100vh - 180px); /* Adjust height based on your desired layout */
+            height: calc(100vh - 180px);
             overflow-y: auto;
         }
     </style>
-<!-- Dashboard Page for Creating and Editing Notes -->
 <div class="flex justify-center items-start min-h-screen pt-12" data-ve-id="35">
   <div class="w-full max-w-4xl px-6" data-ve-id="36">
     <form id="noteForm" data-ve-id="37">
-      <!-- Hidden input to track the index of the note being edited -->
       <input type="hidden" id="note-index" value="-1" data-ve-id="38">
       <input type="text" id="note-title" class="note-title text-5xl font-bold mb-6" placeholder="Give me a name" data-ve-id="39">
       <textarea id="note-content" class="note-content text-xl" placeholder="Now write something brilliant..." data-ve-id="40"></textarea>
@@ -107,7 +104,6 @@
   </div>
 </div>
 
-<!-- Auto-Save Status Display -->
 <div id="auto-save-status" class="fixed bottom-4 right-4 py-2 px-4 bg-gray-600 text-gray-300 text-sm rounded-lg shadow-lg" data-ve-id="41">
   Auto-save just now
 </div>
@@ -116,29 +112,23 @@
     let lastAutoSave = Date.now();
     let autoSaveTimeout;
 
-    // Save the note to localStorage
     function saveNoteToLocalStorage(title, content) {
         let notes = JSON.parse(localStorage.getItem('notes')) || [];
         
-        // Get the index of the note being edited
         const noteIndex = parseInt(document.getElementById('note-index').value, 10);
 
         if (noteIndex > -1 && notes[noteIndex]) {
-            // Update the content of the existing note
             notes[noteIndex].title = title;
             notes[noteIndex].content = content;
         } else {
-            // Create a new note
             notes.push({ title: title, content: content });
-            document.getElementById('note-index').value = notes.length - 1; // New note index
+            document.getElementById('note-index').value = notes.length - 1;
         }
 
-        // Save updated notes
         localStorage.setItem('notes', JSON.stringify(notes));
         updateAutoSaveStatus();
     }
 
-    // Load the selected note from localStorage if available
     function loadSelectedNote() {
         const notes = JSON.parse(localStorage.getItem('notes')) || [];
         const selectedNoteIndex = localStorage.getItem('selectedNoteIndex');
@@ -147,11 +137,10 @@
             const selectedNote = notes[selectedNoteIndex];
             document.getElementById('note-title').value = selectedNote.title || '';
             document.getElementById('note-content').value = selectedNote.content || '';
-            document.getElementById('note-index').value = selectedNoteIndex; // Set the note index for future edits
+            document.getElementById('note-index').value = selectedNoteIndex;
         }
     }
 
-    // Auto-save function
     function autoSaveNote() {
         const title = document.getElementById('note-title').value.trim();
         const content = document.getElementById('note-content').value.trim();
@@ -161,28 +150,22 @@
         }
     }
 
-    // Call the loadSelectedNote function to load the note when the page loads
     loadSelectedNote();
 
-    // Button click event to add a new note
     document.getElementById('add-new-note-btn').addEventListener('click', function() {
-        // Save the current note if there is any content
         autoSaveNote();
 
-        // Clear the input fields for a new note
         document.getElementById('note-title').value = '';
         document.getElementById('note-content').value = '';
-        document.getElementById('note-index').value = '-1'; // Reset to indicate a new note
+        document.getElementById('note-index').value = '-1';
     });
 
-    // Auto-save status function
     function updateAutoSaveStatus() {
         lastAutoSave = Date.now();
         document.getElementById('auto-save-status').textContent = 'Auto-saved just now';
         setTimeout(updateSaveTime, 1000);
     }
 
-    // Function to update the save time
     function updateSaveTime() {
         const secondsAgo = Math.floor((Date.now() - lastAutoSave) / 1000);
         document.getElementById('auto-save-status').textContent = `Auto-saved ${secondsAgo} seconds ago`;
@@ -191,13 +174,11 @@
         }
     }
 
-    // Delay auto-saving until user stops typing for 1 second
     function delayedAutoSave() {
         clearTimeout(autoSaveTimeout);
-        autoSaveTimeout = setTimeout(autoSaveNote, 1000); // Wait 1 second after typing stops
+        autoSaveTimeout = setTimeout(autoSaveNote, 1000);
     }
 
-    // Set up autosave on input events
     document.getElementById('note-title').addEventListener('input', delayedAutoSave);
     document.getElementById('note-content').addEventListener('input', delayedAutoSave);
 });
