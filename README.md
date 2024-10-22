@@ -47,8 +47,16 @@ We welcome contributions! Feel free to check the issues section for open tasks o
 ## Future Development:
 I aim to continue working on adding **AES encryption** using CryptoJS to ensure advanced security for your notes. Other planned features include **auto-locking** after inactivity, **password protection** for added privacy, and offering the choice between **local storage** or using external options like **cookies**, **Supabase**, or **Firebase** if users prefer to store their data on a server.
 
+### Performance Metrics
 
 ![image](https://github.com/user-attachments/assets/5b72fa0a-371a-4e81-9d34-27c57fa5b237)
 
+Olach achieves a **97/100 performance score** on Google Lighthouse, ensuring fast load times and efficient resource usage. This guarantees a smooth user experience with key metrics like **First Contentful Paint** at 0.8 seconds and **Largest Contentful Paint** at 0.9 seconds.
+
+### Sustainability Impact
+
 ![image](https://github.com/user-attachments/assets/aab0ed5a-0588-405d-8f09-d1dbd79b8ab3)
+
+Olach is designed with sustainability in mind, achieving a carbon rating of **A** on Website Carbon. This means it’s cleaner than **87% of all tested web pages globally**, producing just **0.13g of CO2** per visit, aligning with our goal to minimize environmental impact.
+
 
