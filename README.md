@@ -20,7 +20,13 @@
 To run **Olach** using VS Code’s **Live Preview** extension, follow these steps:
 
 ## How to Use:
-I'm currently refining the instructions for this, but for now, download everything, open VS Code, and search for the .html files to get started.
+I'm currently refining the instructions for this, but for now, download everything, open VS Code, and search for the `.html` files to get started.
+
+In the meantime, for simple offline use, you can use the **[Save All Resources Chrome extension](https://chromewebstore.google.com/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb)** on the following pages:
+- [Dashboard](https://app-olach.oasisofchange.org/dashboard/)
+- [List of Notes](https://app-olach.oasisofchange.org/list-of-notes/)
+
+Then, download the HTML and assets, and import them into VS Code to run the app locally.
 
 1. **Clone the repository**:
    ```bash
