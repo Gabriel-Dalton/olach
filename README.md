@@ -28,26 +28,6 @@ In the meantime, for simple offline use, you can use the **[Save All Resources C
 
 Then, download the HTML and assets, and import them into VS Code to run the app locally.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Gabriel-Dalton/olach
-   ```
-
-2. **Open the folder**:
-   Open **VS Code** and navigate to the folder where you cloned the project.
-
-3. **Install the Live Preview extension**:
-   - Open **VS Code**.
-   - Go to the Extensions tab (or press `Ctrl+Shift+X`).
-   - Search for "**Live Preview**" and install the extension provided by Microsoft.
-
-4. **Start Live Preview**:
-   - Once the extension is installed, open the `dashboard` and the `list-of-notes` files.
-   - Click the **Go Live** button at the bottom right of the VS Code window.
-   
-5. **Use the app**:
-   The app will launch in your browser, and you can start creating and managing your notes locally without needing a local server setup.
-
 ## Name Origin:
 The name **Olach** is derived from the Irish word **"i bhfolach,"** meaning "hidden." This name reflects the app’s core mission of keeping your notes private and secure, ensuring your data is only accessible by you.
 
