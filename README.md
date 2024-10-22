@@ -20,6 +20,7 @@
 To run **Olach** using VS Code’s **Live Preview** extension, follow these steps:
 
 ## How to Use:
+I'm currently refining the instructions for this, but for now, download everything, open VS Code, and search for the .html files to get started.
 
 1. **Clone the repository**:
    ```bash
