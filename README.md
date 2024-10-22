@@ -38,15 +38,6 @@ The **Olach-Offline-Mode** folder in the main branch contains the full source co
 
 Once you've downloaded the HTML and assets, import them into VS Code to run the app locally! This way, you can easily explore the app's structure and functionality.
 
-## Name Origin:
-The name **Olach** is derived from the Irish word **"i bhfolach,"** meaning "hidden." This name reflects the app’s core mission of keeping your notes private and secure, ensuring your data is only accessible by you.
-
-## Contributions:
-We welcome contributions! Feel free to check the issues section for open tasks or suggest new features.
-
-## Future Development:
-I aim to continue working on adding **AES encryption** using CryptoJS to ensure advanced security for your notes. Other planned features include **auto-locking** after inactivity, **password protection** for added privacy, and offering the choice between **local storage** or using external options like **cookies**, **Supabase**, or **Firebase** if users prefer to store their data on a server.
-
 ### Performance Metrics
 
 ![image](https://github.com/user-attachments/assets/5b72fa0a-371a-4e81-9d34-27c57fa5b237)
@@ -59,4 +50,11 @@ Olach achieves a **97/100 performance score** on Google Lighthouse, ensuring fas
 
 Olach is designed with sustainability in mind, achieving a carbon rating of **A** on Website Carbon. This means it’s cleaner than **87% of all tested web pages globally**, producing just **0.13g of CO2** per visit, aligning with our goal to minimize environmental impact.
 
+## Name Origin:
+The name **Olach** is derived from the Irish word **"i bhfolach,"** meaning "hidden." This name reflects the app’s core mission of keeping your notes private and secure, ensuring your data is only accessible by you.
 
+## Future Development:
+I aim to continue working on adding **AES encryption** using CryptoJS to ensure advanced security for your notes. Other planned features include **auto-locking** after inactivity, **password protection** for added privacy, and offering the choice between **local storage** or using external options like **cookies**, **Supabase**, or **Firebase** if users prefer to store their data on a server.
+
+## Contributions:
+We welcome contributions! Feel free to check the issues section for open tasks or suggest new features.
