@@ -20,13 +20,23 @@
 To run **Olach** using VS Code’s **Live Preview** extension, follow these steps:
 
 ## How to Use:
-I'm currently refining the instructions for this, but for now, download everything, open VS Code, and search for the `.html` files to get started.
 
-In the meantime, for simple offline use, you can use the **[Save All Resources Chrome extension](https://chromewebstore.google.com/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb)** on the following pages:
+We're currently refining the instructions, but for now, follow these steps to get started:
+
+1. **Download the Repository**: Download the entire project and open it in **VS Code**.
+   
+2. **Locate the HTML Files**: In VS Code, search for the `.html` files to access and start the application.
+
+For **simple offline use**, you can also leverage the **[Save All Resources Chrome extension](https://chromewebstore.google.com/detail/save-all-resources/abpdnfjocnmdomablahdcfnoggeeiedb)** to download the necessary pages:
 - [Dashboard](https://app-olach.oasisofchange.org/dashboard/)
 - [List of Notes](https://app-olach.oasisofchange.org/list-of-notes/)
 
-Then, download the HTML and assets, and import them into VS Code to run the app locally.
+The **Olach-Offline-Mode** folder in the main branch contains the full source code, including HTML, CSS, and assets.
+
+- **Landing Page**: Available in the **olach.oasisofchange.org** folder.
+- **App Dashboard & List of Notes**: Available in the **app-olach.oasisofchange.org** folder.
+
+Once you've downloaded the HTML and assets, import them into VS Code to run the app locally! This way, you can easily explore the app's structure and functionality.
 
 ## Name Origin:
 The name **Olach** is derived from the Irish word **"i bhfolach,"** meaning "hidden." This name reflects the app’s core mission of keeping your notes private and secure, ensuring your data is only accessible by you.
